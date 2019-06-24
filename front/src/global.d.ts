@@ -1,5 +1,5 @@
 declare namespace NodeJS {
-	export interface ProcessEnv {
-		REACT_APP_SERVER_URL: string
-	}
+  export interface ProcessEnv {
+    REACT_APP_SERVER_URL: string;
+  }
 }

@@ -1,0 +1,63 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "useJSXTextNode": true
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react"
+  ],
+  "rules": {
+    "react/jsx-tag-spacing": [
+      2,
+      {
+        "closingSlash": "never",
+        "beforeSelfClosing": "always",
+        "afterOpening": "never",
+        "beforeClosing": "never"
+      }
+    ],
+    "indent": "off",
+    "@typescript-eslint/indent": [
+      "error",
+      2
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": 2,
+    "semi": "off",
+    "@typescript-eslint/semi": [
+      2,
+      "never"
+    ],
+    "@typescript-eslint/member-delimiter-style": [
+      2,
+      {
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        },
+        "multiline": {
+          "delimiter": "none",
+          "requireLast": true
+        }
+      }
+    ],
+    "react/prop-types": "off"
+  },
+  "overrides": [
+    {
+      "files": "*.d.ts",
+      "rules": {
+        "no-unused-vars": "off"
+      }
+    }
+  ]
+}

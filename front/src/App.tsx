@@ -1,34 +1,37 @@
-import React, { useState } from 'react';
 import BotaoContador from './BotaoContador'
-import { Switch, Route } from 'react-router';
-import { Link } from 'react-router-dom';
-import Form from './FormExample';
-import NavigationBar from './NavigationBar';
-
-// function submit() {
-//   const email = document.getElementsByName('email')[0].value
-//   const password = document.getElementsByName('password')[0].value
-//   const name = document.getElementsByName('name')[0].value
-// }
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import Form from './FormExample'
+import NavigationBar from './NavigationBar'
+import Game from 'game'
 
 const App = () => {
   return (
-		<div>
-			<NavigationBar />
-			<Switch>
-				<Route
-					path="/"
-					component={BotaoContador}
-					exact={true}
-				/>
-				<Route
-					path="/users"
-					component={Form}
-				/>
-				<Route component={() => <div>Desculpe, sua página não foi encontrada!</div>} />
-			</Switch>
-		</div>
-  );
+    <div>
+      <NavigationBar />
+      <Switch>
+        <Route
+          path="/botaocontador"
+          component={BotaoContador}
+          exact={true}
+        />
+        <Route
+          path="/users"
+          component={Form}
+        />
+        <Route
+          path="/game"
+          component={() => <Game board={[
+            [0, 1, 1, 1, 0],
+            [0, 1, 0, 1, 0],
+            [0, 1, 1, 1, 0],
+            [0, 1, 0, 1, 0]
+          ]} />}
+        />
+        <Route component={() => <div>Desculpe, sua página não foi encontrada!</div>} />
+      </Switch>
+    </div>
+  )
 }
 
-export default App;
+export default App
