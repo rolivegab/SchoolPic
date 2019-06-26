@@ -8,15 +8,21 @@ interface Props {
 const FlexColumn = styled.div`
   display: flex;
   flex-direction: column;
+  
+  span {
+    display: inline-block;
+    text-align: center;
+    width: 26px;
+  }
 
   > div:nth-child(1) {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    height: calc(26px * 4);
 
     > span {
       display: inline-block;
-      padding: 5px;
     }
   }
 

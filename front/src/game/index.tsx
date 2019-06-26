@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useState } from 'react'
-import styled from 'styled-components'
 import LeftColumn from './LeftColumn'
 import TopColumn from './TopColumn'
 import Board from './Board'
@@ -54,8 +53,4 @@ const Game: FunctionComponent<Props> = ({ board }) => {
   )
 }
 
-const StyledGame = styled(Game)`
-  width: 100%;
-`
-
-export default StyledGame
+export default Game

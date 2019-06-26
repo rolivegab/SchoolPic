@@ -6,28 +6,44 @@ interface Props {
 }
 
 const FlexColumn = styled.div`
-  display: flex;
+  display: flex; 
+  white-space: nowrap;
+  background-color: lightgray;
+  span {
+    line-height: 26px;
+    display: inline-block;
+    text-align: center;
+    width: 26px;
+  }
 
   > div:nth-child(1) {
+    padding-top: calc(26px * 4);
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 
     > span {
       display: inline-block;
-      padding: 5px;
     }
   }
 `
 
 const LeftColumn: FunctionComponent<Props> = ({labels, children}) => {
+  console.log(labels)
   return (
     <FlexColumn>
       <div>
         {labels.map((i, indexI) => (
-          <div key={indexI}>{i.flatMap(j => j === 0 ? [] : [j]).map((j, indexJ) => (
-            <span key={indexJ}>{j}</span>
-          ))}</div>
+          <div key={indexI}>{i.map((j, indexJ) => {
+            if (i.length === 1 && j === 0) {
+              return <span>0</span>
+            }
+            if (j !== 0) {
+              return <>
+                <span key={indexJ}>{j}</span>
+              </>
+            }
+          })}</div>
         ))}
       </div>
       <div>
